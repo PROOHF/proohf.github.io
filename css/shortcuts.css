@@ -1,0 +1,21 @@
+
+a {
+  color: gray;
+}
+
+a:hover {
+  color: red;
+}
+
+dd {
+  padding-bottom: 8px;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
