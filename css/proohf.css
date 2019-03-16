@@ -1,0 +1,114 @@
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  background: #13191e;
+}
+
+.coolgray {
+  color: #656f79;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", sans-serif;
+}
+
+h3, h5 {
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+h5 {
+  margin-bottom: 0.5rem;
+}
+
+.topbar {
+  padding-top: 3px;
+  background: linear-gradient(90deg, #26D0CE 0%,#1A2980 70%);
+}
+
+.head-wrapper {
+  background-image: linear-gradient(#000, #13191e);
+}
+
+.one {
+  padding-top: 25%;
+  padding-bottom: 150px;
+}
+
+.one p {
+  font-size: 2rem;
+}
+
+.two {
+  margin-bottom: 1rem;
+}
+
+.card {
+  margin-bottom: 3rem;
+}
+
+footer {
+  margin-top: 20rem;
+  text-align: center;
+}
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 4px;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.link:after {
+  content: "";
+  width: 200%;
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: transform 0.4s ease-in-out;
+}
+
+.link-green:after {
+  background: linear-gradient(90deg, #38ef7d 0%, #11998e  50%);
+}
+
+.link-pink:after {
+  background: linear-gradient(90deg, #f80759 0%, #bc4e9c 50%);
+}
+
+.link-purple:after {
+  background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 50%);
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link:hover:after {
+  transform: translate3d(50%, 0, 0);
+}
