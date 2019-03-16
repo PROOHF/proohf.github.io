@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TAGIO | XML-tag finder</title>
+  <link rel="shortcut icon" href="images/tagio_favicon.ico"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+
+  <style>
+    body {color:#fff;}
+    a {color:#fff; text-decoration: underline;}
+    a:hover {color: #dc3545;}
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83127106-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-83127106-3');
+  </script>
+</head>
+
+<body class="bg-dark">
+  <div class="container">
+    <div class="row pt-5">
+      <div class="col-md-auto"> 
+        <h2 class="mb-0">Tagio <small class="text-muted">Your tool to <em>input</em> a XML-tag and <em>output</em> it's value.</small></h2>
+      </div>
+      <div class="col pt-3 text-right">
+        <small class="text-muted">Version 1.2</small>
+      </div>    
+    </div>
+    <div class="row py-2">
+      <div class="col">
+        <form>
+          <div class="form-group">
+            <textarea class="form-control" id="input" rows="8" placeholder="Put your XML data here please."></textarea>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="tag" rows="1" placeholder="Enter your XML-tag here (ex: skywalker)"></textarea>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="output" rows="5" readonly placeholder="Push the green button to make it rain!"></textarea>
+          </div>
+        </form>
+        <div class="btn-toolbar justify-content-between" role="toolbar">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-success" onclick="tagio()">
+              <i class="fa fa-search" aria-hidden="true"></i> USE THE FORCE
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="copyOutputToClipboard()">
+              <i class="fa fa-clipboard" aria-hidden="true"></i> COPY TO CLIPBOARD
+            </button>
+            <button type="button" class="btn btn-danger" onclick="clearTextareas()">
+              <i class="fa fa-eraser" aria-hidden="true"></i> CLEAR ALL
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+        <div class="row">
+          <small class="text-muted" id="tagCountLabel">0</small> <small class="text-muted pl-1">tags found!</small>
+        </div>
+      </div>
+  </div>
+  <footer class="mt-4 text-center">
+      <i class="fa fa-github" aria-hidden="true"></i> This code is available on <a href="https://github.com/PROOHF/tagio">GitHub</a> | Have this random dude made more useful stuff? <a href="http://www.proohf.com/">Let's see</a>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/tagio_scripts.js"></script>
+</body>
+</html>
