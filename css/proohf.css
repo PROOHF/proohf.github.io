@@ -6,39 +6,33 @@ are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%;
 }
+
 body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
-  color: #fff;
-  background: #13191e;
+  color: #000;
+  background: #F5F5F0;
 }
 
 .coolgray {
-  color: #656f79;
+  /*color: #656f79;*/
+  color: #505860;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Lato", sans-serif;
+h1 {
+  font-family: "Story Script", sans-serif;
+  font-size: 8rem;
 }
 
-h3, h5 {
+h2, h3 {
+  font-weight:400;
   letter-spacing: 0.1rem;
-  text-transform: uppercase;
 }
 
-h5 {
+h3 {
   margin-bottom: 0.5rem;
-}
-
-.topbar {
-  padding-top: 3px;
-  background: linear-gradient(90deg, #26D0CE 0%,#1A2980 70%);
-}
-
-.head-wrapper {
-  background-image: linear-gradient(#000, #13191e);
 }
 
 .one {
@@ -50,17 +44,52 @@ h5 {
   font-size: 2rem;
 }
 
-.two {
-  margin-bottom: 1rem;
-}
-
 .card {
   margin-bottom: 3rem;
+  height: 250px;
+  padding: 20px;
+  background: #fff;
+  border: 6px solid #000;
+  box-shadow: 12px 12px 0 #000;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 17px 17px 0 #000;
+}
+
+.card-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 3px;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.card:hover .card-title::after {
+  transform: translateX(0);
 }
 
 footer {
   margin-top: 20rem;
   text-align: center;
+  font-weight: 500;
 }
 
 /* Links
@@ -74,11 +103,14 @@ a {
 .link {
   display: inline-block;
   position: relative;
-  padding-bottom: 4px;
+  cursor: pointer;
   overflow: hidden;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
+  padding: 0 8px 0 8px;
+  color: #fff;
+  background: #000;
 }
 
 .link:after {
@@ -92,23 +124,56 @@ a {
   transition: transform 0.4s ease-in-out;
 }
 
-.link-green:after {
-  background: linear-gradient(90deg, #38ef7d 0%, #11998e  50%);
+.link:hover {
+  background-color: #A8FBD3;
+  color: #000;
 }
 
-.link-pink:after {
-  background: linear-gradient(90deg, #f80759 0%, #bc4e9c 50%);
+/* Media queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (min-width:320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+h1 {
+  font-size: 8rem;
 }
 
-.link-purple:after {
-  background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 50%);
+}
+@media (min-width:481px) {
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+h1 {font-size: 8rem;}
+.one p {
+  font-size: 2.4rem;
+}
+.card {
+  height: 350px;
 }
 
-a:hover {
-  cursor: pointer;
-  text-decoration: none;
+}
+@media (min-width:641px) {
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+h1 {
+  font-size: 8rem;
+}
+.card {
+  height: 350px;
 }
 
-.link:hover:after {
-  transform: translate3d(50%, 0, 0);
+}
+@media (min-width:961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+h1 {
+  font-size: 6rem;
+}
+.card {
+  height: 250px;
+}
+
+}
+@media (min-width:1025px) {
+/* big landscape tablets, laptops, and desktops */
+
+}
+@media (min-width:1281px) {
+/* hi-res laptops and desktops */
+
 }
