@@ -11,6 +11,8 @@ html {
 :root {
   --background-color: #F5F5F0;
   --text-color: #000;
+  --head-h1-shadow: rgb(224, 224, 224);
+  --head-p-color: #505860;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,6 +20,8 @@ html {
     /* Dark mode variables */
     --background-color: #242424;
     --text-color: #f0f0f0;
+    --head-h1-shadow: black;
+    --head-p-color: #6d7680;
   }
 }
 
@@ -33,7 +37,7 @@ body {
 }
 
 .coolgray {
-  color: #505860;
+  color: var(--head-p-color);
 }
 
 h1, h2 {
@@ -42,6 +46,7 @@ h1, h2 {
 
 h1 {
   font-size: 6rem;
+  text-shadow: 2px 10px var(--head-h1-shadow);
 }
 
 h2, h3 {
@@ -60,6 +65,12 @@ h3 {
 
 .one p {
   font-size: 2rem;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 .card {
