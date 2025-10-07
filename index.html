@@ -36,36 +36,54 @@
 
     <div class="container">
       <h2>Projects</h2>
+      <div class="tag-filter">
+        <button class="filter-btn active" data-tag="all">All</button>
+        <button class="filter-btn" data-tag="tool">Tools</button>
+        <button class="filter-btn" data-tag="health">Health</button>
+        <button class="filter-btn" data-tag="support">Support</button>
+      </div>
       <div class="row two">
-        <div class="eight columns card">
-          <h3 class="card-title">Sqlify </h3>
+        <div class="eight columns">
+        <div class="project card" data-tags="tool support">
+          <div class="tags"><span>tool</span><span>support</span></div>
+          <h3 class="card-title"><i data-feather="database"></i> Sqlify</h3>
           <p>
-            <i data-feather="database"></i> A small tool for support people that works with sql querys all day long.
+            A small tool for support people that works with sql querys all day long.
           </p>
           <a class="link" href="http://www.proohf.com/sqlify">What am I waiting for?</a>
+          </div>
         </div>
-        <div class="four columns card">
-          <h3 class="card-title">Tagio</h3>
-          <p>
-            <i data-feather="file-text"></i> Great tool to extract all values for a specific xml-tag. Fast and easy to use.
-          </p>
-          <a class="link" href="http://www.proohf.com/tagio">What the f*ck is this?</a>
+        <div class="four columns">
+          <div class="project card" data-tags="tool support">
+            <div class="tags"><span>tool</span><span>support</span></div>
+            <h3 class="card-title"><i data-feather="file-text"></i> Tagio</h3>
+            <p>
+              Great tool to extract all values for a specific xml-tag. Fast and easy to use.
+            </p>
+            <a class="link" href="http://www.proohf.com/tagio">What the f*ck is this?</a>
+          </div>
         </div>
       </div>
       <div class="row three">
-        <div class="four columns card">
-          <h3 class="card-title">Shortcuts</h3>
-          <p>
-            <i data-feather="copy"></i> Awesome keyboard shortcuts that I apparently always forget about. Maybe they can help you to?
-          </p>
-          <a class="link" href="http://www.proohf.com/shortcuts">How fun can it be?</a>
+        <div class="six columns">
+          <div class="project card" data-tags="tool">
+            <div class="tags"><span>tool</span></div>
+            <h3 class="card-title"><i data-feather="copy"></i> Shortcuts</h3>
+            <p>
+              Awesome keyboard shortcuts that I apparently always forget about. Maybe they can help you to?
+            </p>
+            <a class="link" href="http://www.proohf.com/shortcuts">How fun can it be?</a>
+          </div>
         </div>
-        <div class="eight columns card">
-          <h3 class="card-title">Pacer</h3>
-          <p>
-            <i data-feather="fast-forward"></i> Simple small page to calculate your running pace. Give it a try and tell me what you think :)
-          </p>
-          <a class="link" href="http://www.proohf.com/pacer">Click here if you are a runner!</a>
+        <div class="six columns">
+          <div class="project card" data-tags="health">
+            <div class="tags"><span>health</span></div>
+            <h3 class="card-title"><i data-feather="fast-forward"></i> Pacer</h3>
+            <p>
+              Simple small page to calculate your running pace. Give it a try and tell me what you think :)
+            </p>
+            <a class="link" href="http://www.proohf.com/pacer">Click here if you are a runner!</a>
+          </div>
         </div>
       </div>
     </div>
@@ -74,48 +92,8 @@
     </footer>
   </body>
 
-  <!-- Citat in the footer -->
-  <script>
-    var date = new Date();
-    var weekday = new Array(7);
-    weekday[0] = "Tomorrow is a new week with new possibilities";
-    weekday[1] = "One day or day one, you decide";
-    weekday[2] = "It always seems impossible until it's done.";
-    weekday[3] = "Have a wonderful wednesday";
-    weekday[4] = "IT'S FRIDAY!! Sorry.. just practicing for tomorrow";
-    weekday[5] = "Friday means taco, enjoy it!";
-    weekday[6] = "It's saturday, do something fun today!";
-  
-    var weekdayNo = weekday[date.getDay()];
-    document.getElementById("weekdayGreeting").innerHTML = weekdayNo;
-  </script>
-
-  <!-- Loading random svg picture on refresh -->
-   <script>
-     const svgImages = [
-    {
-      src: 'images/bbq.svg',
-      alt: 'Illustration of me flipping some hotdogs'
-    },
-    {
-      src: 'images/design.svg',
-      alt: 'llustration of me doing some design work'
-    },
-    {
-      src: 'images/dashboard.svg',
-      alt: 'llustration of a awesome dashboard'
-    }
-  ];
-
-  const randomIndex = Math.floor(Math.random() * svgImages.length);
-  const randomImage = svgImages[randomIndex];
-
-  const imgElement = document.getElementById('random-svg');
-
-  imgElement.src = randomImage.src;
-  imgElement.alt = randomImage.alt;
-  </script>
-
+  <!-- Load scripts -->
+  <script src="js/scripts.js"></script>
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <script>
