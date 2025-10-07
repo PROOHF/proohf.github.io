@@ -13,6 +13,7 @@ html {
   --text-color: #000;
   --head-h1-shadow: rgb(224, 224, 224);
   --head-p-color: #505860;
+  --primary-blue: #3338ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +21,7 @@ html {
     /* Dark mode variables */
     --background-color: #242424;
     --text-color: #f0f0f0;
-    --head-h1-shadow: black;
+    --head-h1-shadow: #000;
     --head-p-color: #6d7680;
   }
 }
@@ -75,6 +76,75 @@ h3 {
 
 .image-container p {
   font-size: 1.5rem;
+  text-align: center;
+}
+
+.tag-filter {
+  margin-bottom: 0.5rem;
+}
+
+.filter-btn {
+  border: none;
+  background: #000;
+  padding: 8px 14px;
+  margin-right: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  appearance: none;
+  border-radius: 12px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.filter-btn:hover {
+  color: #505860;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.filter-btn.active {
+  background: var(--primary-blue);
+  color: #fff;
+}
+
+.project {
+  transition: 0.3s;
+}
+
+.project.hidden {
+  display: none;
+}
+
+.tags {
+  margin-bottom: 10px;
+}
+
+.tags span {
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 12px;
+  margin-right: 10px;
 }
 
 .card {
@@ -124,8 +194,10 @@ h3 {
 footer {
   margin-top: 20rem;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
 }
+
+
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -161,7 +233,7 @@ a {
 }
 
 .link:hover {
-  background-color: #3338ff;
+  background-color: var(--primary-blue);
   color: #fff;
 }
 
