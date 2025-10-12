@@ -22,8 +22,8 @@ const svgImages = [
     alt: 'llustration of me doing some design work'
   },
   {
-    src: 'images/dashboard.svg',
-    alt: 'llustration of a awesome dashboard'
+    src: 'images/maintenance.svg',
+    alt: 'llustration of me doing some maintenance'
   }
 ];
 

@@ -9,20 +9,45 @@ html {
 
   /* Standard (light mode) variables */
 :root {
-  --background-color: #F5F5F0;
-  --text-color: #000;
-  --head-h1-shadow: rgb(224, 224, 224);
+  --primary-purple: #6558d3;
+  --secondary-purple: #4133B7;
+
+  --background-color: #e8e8e8;
+  --headers: #425675;
+
+  --text-color: #697e91;
+  --head-h1-shadow: #e0e0e0;
   --head-p-color: #505860;
-  --primary-blue: #3338ff;
+
+  --feather-card-icon-bg: #1FCAC5;
+  --feather-card-color: #fff;
+  --card-bg-color: #ecf0ff;
+  --card-border-color: #425675;
+  --card-shadow: #ceeef8;
+  --card-tags-bg: #bed6fb;
+  --card-tags-color: #425475;
 }
 
+/* Dark mode variables */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Dark mode variables */
-    --background-color: #242424;
-    --text-color: #f0f0f0;
+    --secondary-purple: #6558d3;
+    --primary-purple: #4133B7;
+
+    --background-color: #111827;
+    --headers: #d6d6d6;
+
+    --text-color: #9ca3af;
     --head-h1-shadow: #000;
     --head-p-color: #6d7680;
+
+    --feather-card-icon-bg: #6CD4FF;
+    --feather-card-color: #000;
+    --card-bg-color: #080E1B;
+    --card-border-color: #000;
+    --card-shadow: #1C2332;
+    --card-tags-bg: #343B4B;
+    --card-tags-color: #fff;
   }
 }
 
@@ -36,12 +61,9 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.coolgray {
-  color: var(--head-p-color);
-}
-
 h1, h2 {
   font-family: "Story Script", sans-serif;
+  color: var(--headers);
 }
 
 h1 {
@@ -58,9 +80,16 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
-.small-feather { 
+.feather-small { 
   width: 14px;
   height: 14px;
+}
+
+.feather-card-header {
+  background-color: var(--feather-card-icon-bg);
+  padding: 2px;
+  color: var(--feather-card-color);
+  border-radius: 5px;
 }
 
 .one {
@@ -89,16 +118,15 @@ h3 {
 
 .filter-btn {
   border: none;
-  background: #000;
+  background: var(--card-bg-color);
   padding: 8px 14px;
   margin-right: 6px;
-  border-radius: 6px;
+  border-radius: 20px;
   cursor: pointer;
   transition: 0.2s;
   appearance: none;
-  border-radius: 12px;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--card-tags-color);
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
@@ -117,13 +145,13 @@ h3 {
 }
 
 .filter-btn:hover {
-  color: var(--primary-blue);
+  color: var(--primary-purple);
   text-decoration: none;
   transition-duration: 0.2s;
 }
 
 .filter-btn.active {
-  background: var(--primary-blue);
+  background: var(--primary-purple);
   color: #fff;
 }
 
@@ -140,8 +168,8 @@ h3 {
 }
 
 .tags span {
-  background: #000;
-  color: #fff;
+  background: var(--card-tags-bg);
+  color: var(--card-tags-color);
   font-size: 12px;
   font-weight: 500;
   line-height: 20px;
@@ -155,23 +183,29 @@ h3 {
   margin-bottom: 3rem;
   height: 250px;
   padding: 20px;
-  color:#000;
-  background: #f0f0f0;
-  border: 3px solid #000;
+  background: var(--card-bg-color);
+  border: solid 0.25rem var(--card-border-color);
   border-radius: 8px;
-  box-shadow: 12px 12px 0 #000;
+  box-shadow:
+  1rem 1rem 0 -0.25rem var(--card-shadow),
+  1rem 1rem 0 0 var(--card-border-color);
   transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h3 {
+  color: var(--headers);
 }
 
 .card:hover {
   transform: translate(-5px, -5px);
-  box-shadow: 17px 17px 0 #000;
+  box-shadow:
+  0.5rem 0.5rem 0 -0.25rem var(--card-shadow),
+  0.5rem 0.5rem 0 0 var(--card-border-color);
 }
 
 .card-title {
   font-size: 32px;
   font-weight: 700;
-  color: #000;
   text-transform: uppercase;
   margin-bottom: 15px;
   display: block;
@@ -186,7 +220,7 @@ h3 {
   left: 0;
   width: 90%;
   height: 3px;
-  background-color: #000;
+  background-color: var(--headers);
   transform: translateX(-100%);
   transition: transform 0.3s;
 }
@@ -200,8 +234,6 @@ footer {
   text-align: center;
   font-weight: 600;
 }
-
-
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -222,7 +254,7 @@ a {
   letter-spacing: 1px;
   padding: 0 8px 0 8px;
   color: #fff;
-  background: #000;
+  background: var(--primary-purple);
 }
 
 .link:after {
@@ -237,7 +269,7 @@ a {
 }
 
 .link:hover {
-  background-color: var(--primary-blue);
+  background-color: var(--secondary-purple);
   color: #fff;
 }
 
