@@ -1,3 +1,44 @@
+// TYPEWRITER
+const texts = [
+  { text: "build something together! ", color: "#4133B7" },
+  { text: "be friends? ", color: "#ff4081" },
+  { text: "make ideas come alive. ", color: "#ffcc00" },
+  { text: "have some fun! ", color: "#86BBD8" }
+];
+
+const element = document.querySelector(".typewriter");
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const current = texts[textIndex];
+  const currentText = current.text;
+
+  element.style.color = current.color;
+
+  if (isDeleting) {
+    element.textContent = currentText.substring(0, charIndex--);
+  } else {
+    element.textContent = currentText.substring(0, charIndex++);
+  }
+
+  let speed = isDeleting ? 100 : 130;
+
+  if (!isDeleting && charIndex === currentText.length) {
+    speed = 1500;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    textIndex = (textIndex + 1) % texts.length;
+    speed = 400;
+  }
+
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+
 // GREETINGS BELOW PICTURE
 var date = new Date();
 var weekday = new Array(7);

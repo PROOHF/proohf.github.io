@@ -16,7 +16,6 @@ html {
   --headers: #425675;
 
   --text-color: #697e91;
-  --head-h1-shadow: #e0e0e0;
   --head-p-color: #505860;
 
   --feather-card-icon-bg: #1FCAC5;
@@ -38,7 +37,6 @@ html {
     --headers: #efefef;
 
     --text-color: #9ca3af;
-    --head-h1-shadow: #000;
     --head-p-color: #6d7680;
 
     --feather-card-icon-bg: #6CD4FF;
@@ -62,13 +60,24 @@ body {
 }
 
 h1, h2 {
-  font-family: "Story Script", sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--headers);
 }
 
 h1 {
-  font-size: 6rem;
-  text-shadow: 10px 5px var(--head-h1-shadow);
+  font-size: 3rem;
+}
+
+.typewriter {
+  border-right: 2px solid var(--headers);
+  animation: blink 1.2s infinite;
+  font-weight: 500;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 h2, h3 {
@@ -272,21 +281,21 @@ footer {
 @media (min-width:320px) {
   /* smartphones, iPhone, portrait 480x320 phones */
 h1 {
-  font-size: 8rem;
+  font-size: 5rem;
 }
 
 }
 @media (min-width:481px) {
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 h1 {
-  font-size: 8rem;
+  font-size: 5cqi;
 }
 
 }
 @media (min-width:641px) {
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 h1 {
-  font-size: 8rem;
+  font-size: 5rem;
 }
 .card {
   height: 350px;
@@ -296,7 +305,7 @@ h1 {
 @media (min-width:961px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
 h1 {
-  font-size: 10rem;
+  font-size: 5rem;
 }
 .card {
   height: 250px;
