@@ -1,124 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Mattias Proohf</title>
     <meta name="description" content="Welcome to Mattias Proohf's home on the internet, a small personal homepage, that's it." />
     <!-- If you want to contact me, I know you can find me. I believe in you! -->
     <meta name="author" content="Mattias Proohf" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- Favicon borrowed from starwars[dot]com -->
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Story+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/skeleton.css" />
-    <link rel="stylesheet" href="css/proohf.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="row one"s>
-        <div class="two-thirds column">
-          <h1>Let's <span class="typewriter">have some fun toghter</span></h1>
-          <p>
-            Hi I'm Mattias Proohf, I work as an Application Specialist at Centiro based in Sweden. When I'm not solving problems at work, you'll find me spending time with my family, playing floorball, running, or coding on side projects.
-          </p>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400&family=Sora:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/proohf.2.css" />
+    <script>
+        // Set theme before first paint to avoid flash
+        (function() {
+        const saved = localStorage.getItem('mp-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav>
+        <div class="nav-inner">
+        <a class="nav-logo" href="#">Mattias Proohf</a>
+        <ul class="nav-links">
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <!-- sun = switch to dark, moon = switch to light -->
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        </button>
         </div>
-        <div class="one-third column image-container">
-          <img id="random-svg">
-          <!-- Thanks undraw for there awesome illustrations-->
-          <p id="weekdayGreeting">Hope your day is wonderful so far!</p>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+        <canvas id="dot-grid" class="dot-grid"></canvas>
+        <div class="hero-deco"></div>
+        <div class="hero-deco2"></div>
+        <div class="hero-content">
+        <div class="hero-eyebrow fade-up">Based in Sweden</div>
+        <h1 class="hero-name fade-up">
+            Mattias<br><em>Proohf</em>
+        </h1>
+        <p class="hero-bio fade-up">
+            <strong>Application Specialist at Centiro.</strong> When not solving problems at work you'll find me spending time with family, playing floorball, running — or building side projects that scratch an itch.
+        </p>
+        <div class="hero-pills fade-up">
+            <span class="pill" style="color:var(--tn-cyan);border-color:color-mix(in srgb,var(--tn-cyan) 35%,transparent)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Sweden
+            </span>
+            <span class="pill" style="color:var(--tn-purple);border-color:color-mix(in srgb,var(--tn-purple) 35%,transparent)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Centiro
+            </span>
+            <span class="pill" style="color:var(--tn-teal);border-color:color-mix(in srgb,var(--tn-teal) 35%,transparent)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Open to collabs
+            </span>
+            <span class="pill" style="color:var(--tn-orange);border-color:color-mix(in srgb,var(--tn-orange) 35%,transparent)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Side projects
+            </span>
         </div>
-      </div>
+        <a class="hero-scroll fade-up" href="#projects">
+            <span class="hero-scroll-line"></span>
+            See my work
+        </a>
+        </div>
+
+        <!-- Tetris -->
+        <div class="tetris-panel">
+        <div class="tetris-header">
+            <span class="tetris-title">Tetris</span>
+            <div class="tetris-meta">
+            Score <span id="tetris-score">0</span> &nbsp;·&nbsp; Lines <span id="tetris-lines">0</span>
+            </div>
+        </div>
+
+        <canvas id="tetris-canvas" width="200" height="400"></canvas>
+
+        <div class="tetris-next-wrap">
+            <span class="tetris-next-label">Next</span>
+            <canvas id="tetris-next" width="80" height="80"></canvas>
+        </div>
+
+        <div class="tetris-btns">
+            <button class="tetris-btn" id="tetris-btn">Start</button>
+            <button class="tetris-btn" id="tetris-restart">Restart</button>
+        </div>
+
+        <div class="tetris-controls">
+            <button class="t-ctrl" id="t-left">←</button>
+            <button class="t-ctrl" id="t-rotate">↻</button>
+            <button class="t-ctrl" id="t-drop">↓↓</button>
+            <button class="t-ctrl" id="t-right">→</button>
+        </div>
+
+        <p class="tetris-hint">Arrow keys · Space = hard drop</p>
+        </div>
+
     </div>
 
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="tag-filter">
-        <button class="filter-btn active" data-tag="all"><i class="feather-small" data-feather="coffee"></i> All</button>
-        <button class="filter-btn" data-tag="tool"><i class="feather-small" data-feather="tool"></i> Tool</button>
-        <button class="filter-btn" data-tag="health"><i class="feather-small" data-feather="activity"></i> Health</button>
-        <button class="filter-btn" data-tag="support"><i class="feather-small" data-feather="help-circle"></i> Support</button>
-      </div>
-      <div class="row two">
-        <div class="eight columns">
-          <div class="project card" data-tags="tool support">
-            <div>
-              <div class="tags"><span>tool</span><span>support</span></div>
-              <h3 class="card-title"><i class="feather-card-header" data-feather="database"></i> Sqlify</h3>
-              <p>
-                A small tool for support people that works with sql querys all day long.
-              </p>
-            </div>
-            <a href="http://www.proohf.com/sqlify" class="card-btn">What am I waiting for?</a>
-          </div>
+    <!-- Stats strip -->
+    <div class="about-strip">
+        <div class="stat-card">
+        <div class="stat-num" style="color:var(--tn-purple)">5<span>+</span></div>
+        <div class="stat-label">Side projects shipped</div>
         </div>
-        <div class="four columns">
-          <div class="project card" data-tags="tool support">
-            <div>
-              <div class="tags"><span>tool</span><span>support</span></div>
-              <h3 class="card-title"><i class="feather-card-header" data-feather="file-text"></i> Tagio</h3>
-              <p>
-                Great tool to extract all values for a specific xml-tag. Fast and easy to use.
-              </p>
-            </div>
-            <a href="http://www.proohf.com/tagio" class="card-btn">What the f*ck is this?</a>
-          </div>
+        <div class="stat-card">
+        <div class="stat-num" style="color:var(--tn-teal)">∞</div>
+        <div class="stat-label">Hours spent with family</div>
         </div>
-      </div>
-      <div class="row three">
-        <div class="six columns">
-          <div class="project card" data-tags="tool">
-            <div>
-              <div class="tags"><span>tool</span></div>
-              <h3 class="card-title"><i class="feather-card-header" data-feather="copy"></i> Shortcuts</h3>
-              <p>
-                Awesome keyboard shortcuts that I apparently always forget about. Maybe they can help you to?
-              </p>
-            </div>
-            <a href="http://www.proohf.com/shortcuts" class="card-btn">How fun can it be?</a>
-          </div>
+        <div class="stat-card">
+        <div class="stat-num" style="color:var(--tn-orange)">km<span>s</span></div>
+        <div class="stat-label">Run, walked & counted</div>
         </div>
-        <div class="six columns">
-          <div class="project card" data-tags="health">
-            <div>
-              <div class="tags"><span>health</span></div>
-              <h3 class="card-title"><i class="feather-card-header" data-feather="fast-forward"></i> Pacer</h3>
-              <p>
-                Simple small page to calculate your running pace. Give it a try and tell me what you think :)
-              </p>
-            </div>
-            <a href="http://www.proohf.com/pacer" class="card-btn">Runner? Click here!</a>
-          </div>
-        </div>
-        <div class="twelve columns">
-          <div class="project card" data-tags="health">
-            <div>
-              <div class="tags"><span>health</span></div>
-              <h3 class="card-title"><i class="feather-card-header" data-feather="fast-forward"></i> Aero</h3>
-              <p>
-                 Calculate your intervals fast and easy with this simple tool. It's pretty useful for me when I do my interval training. Maybe it can be useful for you to?
-              </p>
-            </div>
-            <a href="http://www.proohf.com/aero" class="card-btn">Intervals? Ready?</a>
-          </div>
-        </div>
-      </div>
     </div>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="section-header">
+        <h2 class="section-title">Small <em>projects</em></h2>
+        <span class="section-count">05 works</span>
+        </div>
+
+        <div class="bento">
+
+        <!-- Sqlify -->
+        <a class="card card-wide card-cyan" href="http://www.proohf.com/sqlify">
+            <span class="card-num">01</span>
+            <div class="card-tags">
+            <span class="tag">Tool</span>
+            <span class="tag">Support</span>
+            </div>
+            <div class="card-body">
+            <div class="card-title">Sqlify</div>
+            <p class="card-desc">A small tool for support people that work with SQL queries all day long. Simplify, format and share.</p>
+            </div>
+            <span class="card-cta">
+            View project
+            <span class="card-cta-arrow">→</span>
+            </span>
+        </a>
+
+        <!-- Tagio -->
+        <a class="card card-purple" href="http://www.proohf.com/tagio">
+            <span class="card-num">02</span>
+            <div class="card-tags">
+            <span class="tag">Tool</span>
+            <span class="tag">Support</span>
+            </div>
+            <div class="card-body">
+            <div class="card-title">Tagio</div>
+            <p class="card-desc">Extract all values for a specific XML tag. Fast and easy to use.</p>
+            </div>
+            <span class="card-cta">
+            View project
+            <span class="card-cta-arrow">→</span>
+            </span>
+        </a>
+
+        <!-- Pacer -->
+        <a class="card card-green" href="http://www.proohf.com/pacer">
+            <span class="card-num">03</span>
+            <div class="card-tags">
+            <span class="tag">Tool</span>
+            <span class="tag">Health</span>
+            </div>
+            <div class="card-body">
+            <div class="card-title">Pacer</div>
+            <p class="card-desc">Calculate your running pace. Give it a try and tell me what you think.</p>
+            </div>
+            <span class="card-cta">
+            View project
+            <span class="card-cta-arrow">→</span>
+            </span>
+        </a>
+
+        <!-- Shortcuts -->
+        <a class="card card-wide card-orange" href="http://www.proohf.com/shortcuts">
+            <span class="card-num">04</span>
+            <div class="card-tags">
+            <span class="tag">Tool</span>
+            </div>
+            <div class="card-body">
+            <div class="card-title">Shortcuts</div>
+            <p class="card-desc">Awesome keyboard shortcuts that are apparently always forgotten. Maybe they can help you too.</p>
+            </div>
+            <span class="card-cta">
+            View project
+            <span class="card-cta-arrow">→</span>
+            </span>
+        </a>
+
+        <!-- Aero -->
+        <a class="card card-wide card-green" href="http://www.proohf.com/aero">
+            <span class="card-num">05</span>
+            <div class="card-tags">
+            <span class="tag">Tool</span>
+            <span class="tag">Health</span>
+            </div>
+            <div class="card-body">
+            <div class="card-title">Aero</div>
+            <p class="card-desc">Calculate your intervals fast and easy with this simple tool. It's pretty useful for me when I do my interval training. Maybe it can be useful for you to? </p>
+            </div>
+            <span class="card-cta">
+            View project
+            <span class="card-cta-arrow">→</span>
+            </span>
+        </a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <p>Copyright © Mattias Proohf<br>(whatever year it is when you read this)</p>
+        <span class="footer-name">Mattias Proohf</span>
+        <span class="footer-copy">© whatever year it is when you read this</span>
     </footer>
-  </body>
 
-  <!-- Load scripts -->
-  <script src="js/scripts.js"></script>
-  <!-- Feather Icons -->
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  <script>
-    feather.replace();
-  </script>
+    <!-- Load scripts -->
+     <script src="js/scripts.2.js"></script>
+
+</body>
 </html>
