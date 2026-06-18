@@ -1,10 +1,26 @@
 
 // Theme toggle
+const updateThemeColor = (theme) => {
+    const colors = {
+        light: '#e1e2e7',
+        dark: '#24283b'
+    };
+    const metaTheme = document.getElementById('theme-meta-color');
+    metaTheme.setAttribute('content', colors[theme] || colors.light);
+};
+
 document.getElementById('theme-toggle').addEventListener('click', () => {
     const current = document.documentElement.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('mp-theme', next);
+    updateThemeColor(next);
+});
+
+// Initialize theme color on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const theme = document.documentElement.getAttribute('data-theme');
+    updateThemeColor(theme);
 });
 
 // Card mouse glow
@@ -33,7 +49,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const nCanvas = document.getElementById('tetris-next');
     const nCtx    = nCanvas.getContext('2d');
 
-    // TODO: Better colors (matching theme?)
     const COLORS = [null,'#f7768e','#ff9e64','#e0af68','#9ece6a','#7dcfff','#7aa2f7','#bb9af7'];
 
     const SHAPES = [
